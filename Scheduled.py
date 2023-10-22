@@ -274,7 +274,11 @@ def GetmeDFMonthRef():
     currentMonthINT = dateDT.month
     currentYearINT = dateDT.year
 
+<<<<<<< HEAD
     with open('data/reference/MEdf_month_ref.json') as file:
+=======
+    with open('data/reference/meDF_month_ref.json') as file:
+>>>>>>> 5acab35 (MEdf --> meDF)
         meDFMonthRef = load(file)
 
     monthFullList = [x.upper() for x in list(calendar.month_name[1:])]
@@ -290,5 +294,9 @@ def GetmeDFMonthRef():
             if __MonthChecker(meDF, month, i, monthINT, meDFMonthRef):
                 break
     
+<<<<<<< HEAD
     with open('data/reference/MEdf_month_ref.json', 'w') as file:
+=======
+    with open('data/reference/meDF_month_ref.json', 'w') as file:
+>>>>>>> 5acab35 (MEdf --> meDF)
         meDFMonthRef = dump(meDFMonthRef, file, indent=1)
