@@ -269,59 +269,50 @@ class DataManager:
         return nameStatus
     
     def __SortStandbyAndDuty(self):
-        self.bottomCategorised['dutyPersonnel'] = sorted(self.bottomCategorised['dutyPersonnel'], key=lambda x: (x.rankINT, x.nor), reverse=True)
-        self.bottomCategorised['standbyPersonnel'] = sorted(self.bottomCategorised['standbyPersonnel'], key=lambda x: (x.rankINT, x.nor), reverse=True)
+        self.bottomCategorised['dutyPersonnel'] = sorted(self.bottomCategorised['dutyPersonnel'], key=lambda x: x.rankINT, reverse=True)
+        self.bottomCategorised['standbyPersonnel'] = sorted(self.bottomCategorised['standbyPersonnel'], key=lambda x: x.rankINT, reverse=True)
 
-        if len(self.bottomCategorised['dutyPersonnel']) != 6:
-            # each role(key) corresponds to the min(value[0]) rank and max(value[1]) rank
-            dutyRankINTref = {
-                0: [9, 12],
-                1: [4, 9],
-                2: [1, 9],
-                3: [1, 9],
-                4: [1, 3],
-                5: [1, 3]
-            }
-            
-            dutyPersonnelNew = ['UNKNOWN' for x in range(6)]
-            
-            i = 0
-            for j in range(6):
-                if not self.bottomCategorised['dutyPersonnel'] or i == len(self.bottomCategorised['dutyPersonnel']):
-                    break
-                
-                # ensures that ADSS is a regular, ADWS is an NSF and AWO is either a NSF or REGULAR
-                if j == 0 or (j in [1, 2, 3] and self.bottomCategorised['dutyPersonnel'][i].nor == 'REGULAR') or (j in [4, 5] and self.bottomCategorised['dutyPersonnel'][i].nor == 'NSF'):
-                    if self.bottomCategorised['dutyPersonnel'][i].rankINT in range(dutyRankINTref[j][0], dutyRankINTref[j][1]):
-                        dutyPersonnelNew[j] = self.bottomCategorised['dutyPersonnel'][i].displayNoStatus
-                        i += 1
+        rankRef = {"duty": [[9, 12], [4, 9], [1, 9], [1, 9], [1, 3], [1, 3]], "standby": [[9, 12], [1, 9], [1, 3]]}
 
-            self.bottomCategorised['dutyPersonnel'] = dutyPersonnelNew
-        else:
-            self.bottomCategorised['dutyPersonnel'] = [x.displayNoStatus for x in self.bottomCategorised['dutyPersonnel']]
+        dutyPersonnelNew = ['UNKNOWN' for x in range(6)]
+        dutyOpenSlots = [x for x in range(6)]
+        for personnel in self.bottomCategorised['dutyPersonnel']:
+            add = False
+            for i in dutyOpenSlots:
+                if personnel.rankINT in range(rankRef['duty'][i][0], rankRef['duty'][i][1]):
+                    if i == 0:
+                        add = True
+                    if i in [1, 2, 3] and personnel.nor == 'REGULAR':
+                        add = True
+                    if i in [4, 5] and personnel.nor == 'NSF':
+                        add = True
 
-        if len(self.bottomCategorised['standbyPersonnel']) != 3:
-            standbyRankINTref = {
-                0: [9, 12],
-                1: [1, 9],
-                2: [1, 3]
-            }
-            
-            standbyPersonnelNew = ['UNKNOWN' for x in range(3)]
+                    if add:
+                        dutyOpenSlots.remove(i)
+                        dutyPersonnelNew[i] = personnel.displayNoStatus
+                        break
+        
+        self.bottomCategorised['dutyPersonnel'] = dutyPersonnelNew
 
-            i = 0
-            for j in range(3):
-                if not self.bottomCategorised['standbyPersonnel'] or i == len(self.bottomCategorised['standbyPersonnel']):
-                    break
+        standbyPersonnelNew = ['UNKNOWN' for x in range(3)]
+        standbyOpenSlots = [x for x in range(3)]
+        for personnel in self.bottomCategorised['standbyPersonnel']:
+            add = False
+            for i in standbyOpenSlots:
+                if personnel.rankINT in range(rankRef['standby'][i][0], rankRef['standby'][i][1]):
+                    if i == 0:
+                        add = True
+                    if i == 1 and personnel.nor == 'REGULAR':
+                        add = True
+                    if i == 2 and personnel.nor == 'NSF':
+                        add = True
 
-                if j == 0 or (j == 1 and self.bottomCategorised['standbyPersonnel'][i].nor == 'REGULAR') or (j == 2 and self.bottomCategorised['standbyPersonnel'][i].nor == 'NSF'):
-                    if self.bottomCategorised['standbyPersonnel'][i].rankINT in range(standbyRankINTref[j][0], standbyRankINTref[j][1]):
-                        standbyPersonnelNew[j] = self.bottomCategorised['standbyPersonnel'][i].displayNoStatus
-                        i += 1
-            
-            self.bottomCategorised['standbyPersonnel'] = standbyPersonnelNew
-        else:
-            self.bottomCategorised['standbyPersonnel'] = [x.displayNoStatus for x in self.bottomCategorised['standbyPersonnel']]
+                    if add:
+                        standbyOpenSlots.remove(i)
+                        standbyPersonnelNew[i] = personnel.displayNoStatus
+                        break
+        
+        self.bottomCategorised['standbyPersonnel'] = standbyPersonnelNew
 
     def __LoadAll(self, date, WCstandby=False):
         if WCstandby:
@@ -384,7 +375,7 @@ class DataManager:
         if rationNum[1] != 0:
             lunchPersonnel = [x for x in self.categorisedPersonnel['PRESENT']]
             lunchPersonnel = sorted(lunchPersonnel, key=lambda x: (x.nor, x.rankINT))
-            lunchPersonnel = sorted(lunchPersonnel[:rationNum[1]], key=lambda x: (x.nor, x.rankINT), reverse=True)
+            lunchPersonnel = sorted(lunchPersonnel[:rationNum[1]], key=lambda x: x.rankINT, reverse=True)
             lunchPersonnel = [x.displayNoStatus for x in lunchPersonnel]
 
             midStr += f'LUNCH: [{rationNum[1]} PAX]\n' \
