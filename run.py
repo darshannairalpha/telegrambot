@@ -486,7 +486,7 @@ if __name__ == "__main__":
         fallbacks = [CommandHandler('exit', Exit)]
     )
 
-    bot.job_queue.run_repeating(Scheduled.EveryFifteenMinutes, datetime.timedelta(minutes=15), datetime.time(0, 0), datetime.time(12, 0))
+    bot.job_queue.run_repeating(Scheduled.EveryFifteenMinutes, datetime.timedelta(minutes=15), datetime.time(0, 0))
     bot.job_queue.run_daily(Scheduled.EveryDaily, datetime.time(0, 0))
     bot.job_queue.run_monthly(Scheduled.EveryMonth, datetime.time(0, 0), -1)
 
