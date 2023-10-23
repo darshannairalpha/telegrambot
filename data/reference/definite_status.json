@@ -35,6 +35,10 @@
   "displayStatus": "NIL",
   "category": "PRESENT"
  },
+ "AI": {
+  "displayStatus": "AI",
+  "category": "PRESENT"
+ },
  "X": {
   "displayStatus": "NIL",
   "category": "DYME"
@@ -153,6 +157,10 @@
  },
  "CMD": {
   "displayStatus": "CMD",
+  "category": "CSE"
+ },
+ "RDPC": {
+  "displayStatus": "RDPC",
   "category": "CSE"
  },
  "OSL": {
