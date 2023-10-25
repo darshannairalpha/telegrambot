@@ -258,12 +258,11 @@ class DataManager:
         self.__SetDate(date)
 
         nameStatus = {}
+        self.__LoadME(nameStatus)
         if self.fullPS:
             self.__LoadADW(nameStatus)
         else:
             self.__GetWeaponControllers()
-
-        self.__LoadME(nameStatus)
         self.__LoadOverrideLists(nameStatus)
 
         return nameStatus
