@@ -1,0 +1,18 @@
+Apr,Wed,Thu,Fri,Sat,Sun,Mon,Tue,Wed.1,Thu.1,Fri.1,Sat.1,Sun.1,Mon.1,Tue.1,Wed.2,Thu.2,Fri.2,Sat.2,Sun.2,Mon.2,Tue.2,Wed.3,Thu.3,Fri.3,Sat.3,Sun.3,Mon.3,Tue.3,Wed.4,Thu.4,Fri.4
+NIL,NIL,NIL,Good Friday,Weekend,Weekend (L4),NIL,NIL,NIL,NIL,65,Weekend,Weekend,63,65,63,NIL,NIL,Weekend,Weekend,63,XVS,65,65,NIL,Weekend,Weekend,63,60,60,NIL,NIL
+AOCC,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A,B,A
+NIL,31,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30
+A2(D),Aslan,JQ,Mondane,Tonic,Hector,Moose,Aslan,Protein,Aslan,Moose,Focus,Joe,Aslan,Saturn,Aslan,Saturn,Focus,Eyemo,Aslan,Moose,Hector,Eyemo,Sunny,Moose,Aslan,Protein,Hector,Eyemo,Focus,Saturn,Hector
+A2(N),Mondane,Eyemo,Focus,JQ,Jitsu,Eyemo,Hector,JQ,Focus,Eyemo,Aslan,Scooby,Hector,Eyemo,Mondane,Eyemo,Hector,Scooby,Focus,Saturn,Focus,Joe,Mondane,Joe,Mondane,Joe,Aslan,Scooby,Sunny,Eyemo,Mondane
+G1,Halo,Jitsu,Icepack,Halo,Icepack,Chisel,Halo/Icepack,Chisel,Icepack,Halo,CENTAUR,DARTS,CENTAUR,Darts,Ion,Lightyear,JITSU,Chisel,JITSU,DARTS,Jitsu,Chisel,CENTAUR,DARTS,Halo,CENTAUR,GEEKY/JITSU,Chisel,GEEKY,Lightyear,Halo
+G2,Moose,Tonic,Protein,Ram,Protein,Tonic,Moose,BEAST,Spaceman,Tonic,Moose,Jitsu,Spaceman,Dobby,Protein,Scooby,BEAST,Tonic,BEAST,Tonic/Scooby,Protein/Rock/Protein,Beast,Ion,DOBBY,Moose,RAM,DOBBY/BEAST,Protein,BEAST,Dobby,Moose
+G3A,Rubik,Hammer,Gengar,Chimney,Rubik,Laura,Mermaid,Seeker,Hammer,Laura,Hammer,Seeker,Gengar,Decoy,Rubik,Decoy,Seeker,Exos,Laura,Mermaid,Snap,Laura,Chimney,Decoy,Rubik,Decoy,Snap,Rubik,Gengar,Ignite,Gengar
+G3S,Rock,Mafia/Double,PSYCHO,MAFIA,LASER,DOBBY,ROCK,Dobby,MAFIA,SANS,LASER,DOBBY,PSYCHO,Comic,Audi,COMIC,Sans,Comic,Sans,Dobby,Stingy/Sans,COMIC,PSYCHO,Sans,ROCK,PSYCHO,COMIC,DOUBLE,Comic,Sans,Aslan/LASER
+G4,Tingle,Bentoh,Slayer,Rudolph,Slayer / Gambit,Muru,Flora,Rudolph,Tingle,Seed,Karma,KYM,Tingle,KYM,Gambit,Seed,Karma,Muru,Flora,Muru,Gambit,KYM,Tingle,Bentoh,Sonic,Seed,Flora,Rudolph,Sonic,Bentoh,Yeong
+A2(D) Stby,Focus,Saturn,Hector,Scooby,Mondane,Protein,Ram,Scooby,Ram,Scooby,Hector,Saturn,Sunny,Joe,Focus,Joe,Aslan,JQ,Hector,Tonic,Sunny,JQ,Focus,Protein,Focus,Moose,Mondane,Joe,Aslan,Hector,Aslan
+A2(N) Stby,Hector,Joe,Hector,Joe,Ram,JQ,Focus,Eyemo,Jitsu,Joe,Sunny,Tonic,Focus,JQ,Hector,Joe,Mondane,Moose,Tonic,Joe,Mondane,Saturn,Aslan,Saturn,Hector,Saturn,Sunny,Moose,Focus,Mondane,Focus
+G1 Stby,Icepack,Centaur,Chisel,Chisel,Chisel,Halo,Icepack,Icepack,Halo,Chisel,Darts,Centaur,Jitsu,Jitsu,Jitsu,Icepack,Darts,Icepack,Darts,Icepack,Chisel,Darts,Darts,Jitsu,Icepack,Darts,Jitsu/Geeky,Centaur,Darts,Darts,Icepack
+G2 Stby,Scooby,Scooby,Moose,163,Tonic,Scooby,Protein,Jitsu,Scooby,Protein,Tonic,Rock,Ram,Beast,Scooby,Tonic,Dobby,Moose,Dobby,Scooby,Dobby,Tonic,Beast,Beast,Tonic,Rock,Beast/Dobby,Tonic,Jitsu,Jitsu,Scooby
+G3A Stby,Ignite,Decoy,Laura,Hammer,Seeker,Gengar,Decoy,Ignite,Mermaid,Gengar,Rubik,Mermaid,Ignite,Hammer,Seeker,Gengar,Rubik,Gengar,Hammer,Rubik,Hammer,Rubik,Seeker,Laura,Hammer,Laura,Hammer,Decoy,Snap,Chimney,Laura
+G3S Stby,Mafia,Mafia,Laser,Audi,Psycho,Mafia,Psycho,Laser,Laser,Dobby,Mafia,Sans,Rock,Sans,Mafia,Dobby,Aslan,Dobby,Comic,Mafia,Sans/Aslan,Dobby,Double,Comic,Laser,Mafia,Sans,Psycho,Mafia,Laser,Psycho 
+G4 Stby,Karma,Seed,Gambit,Muru,Gambit,Seed,Sonic,KYM,Gambit,Muru,Flora,Rudolph,Flora,Muru,Tingle,Rudolph,Tingle,KYM,Sonic,Bentoh,Tingle,Muru,Karma,Rudolph,Tingle,KYM,Gambit,Bentoh,Karma,Rudolph,Flora
