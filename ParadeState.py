@@ -130,7 +130,7 @@ class DataManager:
         self.dateDT = None
         self.dateRAW = None
         self.day = None
-        self.WCrange = [5, 6, 7]
+        self.WCrange = [1, 3, 5]
         self.meDF = None
         self.adwDF = None
 
@@ -205,22 +205,28 @@ class DataManager:
         
         self.bottomCategorised['commSec'] = 'UNKNOWN'
 
+    def __GetWeaponControllers(self):
+        for x in self.WCrange:
+            adwDay = self.adwDF.iloc[x, self.day].upper().strip()
+            adwNight = self.adwDF.iloc[x + 1, self.day].upper().strip()
+
+            if adwDay != adwNight:
+                adwDay += '/' + adwNight
+
+            self.bottomCategorised['weaponControllers'].append(adwDay)
+    
     def __SplitCallsigns(self, deltaDay: int):
         temp = []
 
         # places those on duty(A2(D) to G4) the previous day/on the day into a list
         # splitting ones with multiple callsigns into seperate items
-        for x in [self.adwDF.iloc[x, self.day + deltaDay + 1].upper().strip() for x in range(3, 10)]:
+        for x in [self.adwDF.iloc[x, self.day + deltaDay].upper().strip() for x in range(1, 7)]:
             if '/' in x:
                 temp.extend(x.split('/'))
             else:
                 temp.append(x)
         
         return temp
-
-    def __GetWeaponControllers(self):
-        for x in self.WCrange:
-            self.bottomCategorised['weaponControllers'].append(self.adwDF.iloc[x, self.day + 1].upper().strip())
 
     def __LoadADW(self, nameStatus):
         self.__GetWeaponControllers()
@@ -315,7 +321,7 @@ class DataManager:
 
     def __LoadAll(self, date, WCstandby=False):
         if WCstandby:
-            self.WCrange = [5, 6, 7, 12, 13, 14]
+            self.WCrange = [1, 3, 5, 7, 9, 11]
         nameStatus = self.__LoadSheetStatus(date)
 
         for flight in ['alpha', 'bravo', 'others']:
