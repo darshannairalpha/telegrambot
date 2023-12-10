@@ -414,6 +414,27 @@ async def Broadcast_THIRD(update, context):
         await context.bot.send_message(chatID, 'Message not sent.', reply_markup = ReplyKeyboardRemove())
     return ConversationHandler.END
 
+async def ADWSheetEditHandler_FIRST(update, context):
+    chatID = update.effective_chat.id
+    ExcelProcesser.ObtainADWExcelSheet()
+    await context.bot.send_document(
+        chatID,
+        open('data/excel files/out/adw.xlsx', 'rb'),
+        caption = 'Edit !!!\n/exit to exit'
+    )
+
+    return 1
+
+async def ADWSheetEditHandler_SECOND(update, context):
+    chatID = update.effective_chat.id
+    file = await update.message.effective_attachment.get_file()
+    await file.download_to_drive('data/excel files/in/adw.xlsx')
+
+    ExcelProcesser.EditADWExcelSheet()
+
+    await context.bot.send_message(chatID, 'Should have been updated idk')
+    return ConversationHandler.END
+
 async def Exit(update, context):
     chatID = update.effective_chat.id
     await context.bot.send_message(chatID, 'Exit ok \U0001F44D', reply_markup = ReplyKeyboardRemove())
@@ -486,6 +507,14 @@ if __name__ == "__main__":
         fallbacks = [CommandHandler('exit', Exit)]
     )
 
+    ADWSheetHandler = ConversationHandler(
+        entry_points = [CommandHandler('ae', ADWSheetEditHandler_FIRST)],
+        states = {
+            1: [MessageHandler(filters.Document.ALL, ADWSheetEditHandler_SECOND)]
+        },
+        fallbacks = [CommandHandler('exit', Exit)]
+    )
+
     bot.job_queue.run_repeating(Scheduled.EveryFifteenMinutes, datetime.timedelta(minutes=15), datetime.time(0, 0))
     bot.job_queue.run_daily(Scheduled.EveryDaily, datetime.time(0, 0))
     bot.job_queue.run_monthly(Scheduled.EveryMonth, datetime.time(0, 0), -1)
@@ -509,5 +538,6 @@ if __name__ == "__main__":
     bot.add_handler(CommandHandler('status', Status))
     bot.add_handler(CommandHandler('update', UpdateAll))
     bot.add_handler(BroadcastHandler)
+    bot.add_handler(ADWSheetHandler)
 
     bot.run_polling()

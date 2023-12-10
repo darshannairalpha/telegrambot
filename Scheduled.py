@@ -24,9 +24,8 @@ async def EveryMonth(context):
 # downloads ME and ADW sheets for previous, current and next month
 # saves sheets as csv file
 def DownloadDatabase():
-    for folder in os.scandir('data/database'):
-        for file in os.scandir(folder):
-            os.remove(file)
+    for file in os.scandir('data/database/me'):
+        os.remove(file)
 
     currentMonth = int(Functions.CurrentDatetime().strftime('%#m'))
     currentYear = int(Functions.CurrentDatetime().strftime('%y'))
@@ -37,8 +36,9 @@ def DownloadDatabase():
         meDF = Functions.csv_to_dataframe(itMonth, itYear, 'me')
         meDF.to_csv(f'data/database/me/me_{itMonth}_{itYear}.csv', index=False)  
 
-        adwDF = Functions.csv_to_dataframe(itMonth, itYear, 'adw')
-        adwDF.to_csv(f'data/database/adw/adw_{itMonth}_{itYear}.csv', index=False)
+        # NOTE: PENDING REMOVAL
+        # adwDF = Functions.csv_to_dataframe(itMonth, itYear, 'adw')
+        # adwDF.to_csv(f'data/database/adw/adw_{itMonth}_{itYear}.csv', index=False)
     
     with open('data/status.json') as status_json:
         status_dict = load(status_json)

@@ -29,8 +29,10 @@ def csv_to_dataframe(month_num, year, sheet):
 
     if sheet == 'me':
         return pd.read_csv(f"https://docs.google.com/spreadsheets/d/1rXLXxWMSpb8hU_BRuI87jv7wS04tB6yD/gviz/tq?tqx=out:csv&sheet={month_alpha}%2020{year}").fillna('NIL') 
-    elif sheet == 'adw':
-        return pd.read_csv("https://docs.google.com/spreadsheets/d/1TwTIG7XdT1RRWzm8XCtbuWyKcMMdXwGr/gviz/tq?tqx=out:csv&sheet=" + datetime.datetime(year, month_num, 1).strftime('%b').upper() + f"%20{year}").fillna('NIL')
+    
+    # NOTE: PENDING REMOVAL
+    # elif sheet == 'adw':
+    #     return pd.read_csv("https://docs.google.com/spreadsheets/d/1TwTIG7XdT1RRWzm8XCtbuWyKcMMdXwGr/gviz/tq?tqx=out:csv&sheet=" + datetime.datetime(year, month_num, 1).strftime('%b').upper() + f"%20{year}").fillna('NIL')
 
 def OpenSheet(dateDT: datetime.datetime, sheet):
     monthINT = int(dateDT.strftime('%#m'))
@@ -39,7 +41,10 @@ def OpenSheet(dateDT: datetime.datetime, sheet):
     # tries to open csv sheet in storage
     # if sheet does not exist, download sheet from online and use it
     try:
-        return pd.read_csv(f'data/database/{sheet}/{sheet}_{monthINT}_{yearINT}.csv')
+        if sheet == 'me':
+            return pd.read_csv(f'data/database/{sheet}/{sheet}_{monthINT}_{yearINT}.csv')
+        elif sheet == 'adw':
+            return pd.read_csv('data/database/adw/adw.csv')
     except:
         return csv_to_dataframe(monthINT, yearINT, sheet)
 

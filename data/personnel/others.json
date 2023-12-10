@@ -1,6 +1,15 @@
 [
  {
   "rank": "CPT",
+  "displayName": "MARCUS",
+  "sheetName": "MARCUS",
+  "commSec": "MARCUS SHAWN",
+  "nor": "REGULAR",
+  "rankINT": 11,
+  "displayNoStatus": "CPT MARCUS"
+ },
+ {
+  "rank": "CPT",
   "displayName": "WEI KEONG",
   "sheetName": "WEI KEONG",
   "commSec": "WEIKEONG",
@@ -46,12 +55,12 @@
  },
  {
   "rank": "2WO",
-  "displayName": "DEVARAJ",
-  "sheetName": "(SUP) DEVARAJ",
-  "commSec": "DEVARAJ",
+  "displayName": "ANDY",
+  "sheetName": "(SUP) ANDY CHEW",
+  "commSec": "ANDY",
   "nor": "REGULAR",
   "rankINT": 7,
-  "displayNoStatus": "2WO DEVARAJ"
+  "displayNoStatus": "2WO ANDY"
  },
  {
   "rank": "2WO",
@@ -117,6 +126,15 @@
   "displayNoStatus": "3WO RONG PO"
  },
  {
+  "rank": "3WO",
+  "displayName": "ZHENG YUAN",
+  "sheetName": "(SUP) ZHENG YUAN",
+  "commSec": "ZHENG YUAN",
+  "nor": "REGULAR",
+  "rankINT": 6,
+  "displayNoStatus": "3WO ZHENG YUAN"
+ },
+ {
   "rank": "MSG",
   "displayName": "YEW SENG",
   "sheetName": "(SUP) YEW SENG",
@@ -154,57 +172,12 @@
  },
  {
   "rank": "2SG",
-  "displayName": "KHAI JIE",
-  "sheetName": "KHAI JIE",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 2,
-  "displayNoStatus": "2SG KHAI JIE"
- },
- {
-  "rank": "2SG",
-  "displayName": "WAI JUNE",
-  "sheetName": "WAI JUNE",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 2,
-  "displayNoStatus": "2SG WAI JUNE"
- },
- {
-  "rank": "2SG",
-  "displayName": "JOSHUA",
-  "sheetName": "JOSHUA",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 2,
-  "displayNoStatus": "2SG JOSHUA"
- },
- {
-  "rank": "2SG",
   "displayName": "SHAO JUN",
   "sheetName": "SHAO JUN",
   "commSec": "NIL",
   "nor": "NSF",
   "rankINT": 2,
   "displayNoStatus": "2SG SHAO JUN"
- },
- {
-  "rank": "3SG",
-  "displayName": "NOAH",
-  "sheetName": "NOAH",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 1,
-  "displayNoStatus": "3SG NOAH"
- },
- {
-  "rank": "3SG",
-  "displayName": "JUN FONG",
-  "sheetName": "JUN FONG",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 1,
-  "displayNoStatus": "3SG JUN FONG"
  },
  {
   "rank": "3SG",

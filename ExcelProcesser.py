@@ -1,6 +1,5 @@
 import Global
 import re
-import openpyxl
 import datetime
 import Functions
 import Scheduled
@@ -221,4 +220,22 @@ def ObtainDutyForecastExcel(startDateDT, endDateDT):
     writer.sheets[Functions.DateConverter(startDateDT - datetime.timedelta(days=1))].hide()
     writer.sheets[Functions.DateConverter(endDateDT + datetime.timedelta(days=1))].hide()
 
+    writer.close()
+
+def EditADWExcelSheet():
+    adwDF = pd.read_excel('data/excel files/in/adw.xlsx').fillna('NIL')
+    
+    adwDF.columns = [x for x in range(adwDF.shape[1])]
+
+    for column in adwDF.columns:
+        adwDF[column] = adwDF[column].str.upper()
+
+    adwDF.to_csv('data/database/adw/adw.csv', index=False)
+
+def ObtainADWExcelSheet():
+    adwDF = pd.read_csv('data/database/adw/adw.csv')
+
+    writer = pd.ExcelWriter('data/excel files/out/adw.xlsx')
+    adwDF.to_excel(writer, sheet_name='ADW', index=False)
+    writer.sheets['ADW'].autofit()
     writer.close()

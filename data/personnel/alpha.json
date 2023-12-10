@@ -10,15 +10,6 @@
  },
  {
   "rank": "CPT",
-  "displayName": "MARCUS",
-  "sheetName": "MARCUS",
-  "commSec": "MARCUS SHAWN",
-  "nor": "REGULAR",
-  "rankINT": 11,
-  "displayNoStatus": "CPT MARCUS"
- },
- {
-  "rank": "CPT",
   "displayName": "MARC",
   "sheetName": "MARC",
   "commSec": "MARC",
@@ -82,12 +73,12 @@
  },
  {
   "rank": "3WO",
-  "displayName": "ZHENG YUAN",
-  "sheetName": "(SUP) ZHENG YUAN",
-  "commSec": "ZHENG YUAN",
+  "displayName": "MATHEW",
+  "sheetName": "(SUP) MATHEW YONG",
+  "commSec": "MATHEW",
   "nor": "REGULAR",
   "rankINT": 6,
-  "displayNoStatus": "3WO ZHENG YUAN"
+  "displayNoStatus": "3WO MATHEW"
  },
  {
   "rank": "3WO",

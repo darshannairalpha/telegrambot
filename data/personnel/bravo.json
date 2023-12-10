@@ -54,6 +54,15 @@
   "displayNoStatus": "CPT ROY"
  },
  {
+  "rank": "LTA",
+  "displayName": "DANIEL",
+  "sheetName": "DANIEL",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 10,
+  "displayNoStatus": "LTA DANIEL"
+ },
+ {
   "rank": "2LT",
   "displayName": "THEOPHILUS",
   "sheetName": "THEOPHILUS",
@@ -72,22 +81,13 @@
   "displayNoStatus": "2LT CALEB"
  },
  {
-  "rank": "2LT",
-  "displayName": "DANIEL",
-  "sheetName": "DANIEL",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 9,
-  "displayNoStatus": "2LT DANIEL"
- },
- {
   "rank": "2WO",
-  "displayName": "ANDY",
-  "sheetName": "(SUP) ANDY CHEW",
-  "commSec": "ANDY",
+  "displayName": "DEVARAJ",
+  "sheetName": "(SUP) DEVARAJ",
+  "commSec": "DEVARAJ",
   "nor": "REGULAR",
   "rankINT": 7,
-  "displayNoStatus": "2WO ANDY"
+  "displayNoStatus": "2WO DEVARAJ"
  },
  {
   "rank": "3WO",
@@ -106,15 +106,6 @@
   "nor": "REGULAR",
   "rankINT": 6,
   "displayNoStatus": "3WO LEONARD"
- },
- {
-  "rank": "3WO",
-  "displayName": "MATHEW",
-  "sheetName": "(SUP) MATHEW YONG",
-  "commSec": "MATHEW",
-  "nor": "REGULAR",
-  "rankINT": 6,
-  "displayNoStatus": "3WO MATHEW"
  },
  {
   "rank": "MSG",
@@ -189,13 +180,13 @@
   "displayNoStatus": "2SG SEAN TZE"
  },
  {
-  "rank": "3SG",
+  "rank": "2SG",
   "displayName": "NISHAN",
   "sheetName": "(RIGG) NISHAN",
   "commSec": "NIL",
   "nor": "REGULAR",
   "rankINT": 1,
-  "displayNoStatus": "3SG NISHAN"
+  "displayNoStatus": "2SG NISHAN"
  },
  {
   "rank": "3SG",
