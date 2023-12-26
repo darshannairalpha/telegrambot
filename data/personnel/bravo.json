@@ -163,6 +163,15 @@
  },
  {
   "rank": "2SG",
+  "displayName": "NISHAN",
+  "sheetName": "(RIGG) NISHAN",
+  "commSec": "NIL",
+  "nor": "REGULAR",
+  "rankINT": 2,
+  "displayNoStatus": "2SG NISHAN"
+ },
+ {
+  "rank": "2SG",
   "displayName": "EVAN",
   "sheetName": "EVAN",
   "commSec": "NIL",
@@ -178,15 +187,6 @@
   "nor": "NSF",
   "rankINT": 2,
   "displayNoStatus": "2SG SEAN TZE"
- },
- {
-  "rank": "2SG",
-  "displayName": "NISHAN",
-  "sheetName": "(RIGG) NISHAN",
-  "commSec": "NIL",
-  "nor": "REGULAR",
-  "rankINT": 1,
-  "displayNoStatus": "2SG NISHAN"
  },
  {
   "rank": "3SG",

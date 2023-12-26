@@ -381,7 +381,7 @@ async def UpdateAll(update, context):
     message = await context.bot.send_message(chatID, 'Updating... 0% Done')
     messageID = message.message_id
     
-    await Scheduled.EveryFifteenMinutes(context)
+    await Scheduled.EveryThirtyMinutes(context, False)
     await context.bot.edit_message_text('Updating... 50% Done', chatID, messageID)
     await Scheduled.EveryDaily(context)
     await context.bot.edit_message_text('Updating... 100% Done', chatID, messageID)
@@ -515,7 +515,7 @@ if __name__ == "__main__":
         fallbacks = [CommandHandler('exit', Exit)]
     )
 
-    bot.job_queue.run_repeating(Scheduled.EveryFifteenMinutes, datetime.timedelta(minutes=15), datetime.time(0, 0))
+    bot.job_queue.run_repeating(Scheduled.EveryThirtyMinutes, datetime.timedelta(minutes=30), datetime.time(0, 0))
     bot.job_queue.run_daily(Scheduled.EveryDaily, datetime.time(0, 0))
     bot.job_queue.run_monthly(Scheduled.EveryMonth, datetime.time(0, 0), -1)
 

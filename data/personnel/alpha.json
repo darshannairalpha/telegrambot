@@ -63,6 +63,51 @@
   "displayNoStatus": "2LT MAX"
  },
  {
+  "rank": "2LT",
+  "displayName": "RICHMOND RAY",
+  "sheetName": "RICHMOND RAY",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 9,
+  "displayNoStatus": "2LT RICHMOND RAY"
+ },
+ {
+  "rank": "2LT",
+  "displayName": "LEON LAI",
+  "sheetName": "LEON LAI",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 9,
+  "displayNoStatus": "2LT LEON LAI"
+ },
+ {
+  "rank": "2LT",
+  "displayName": "YEN KIT",
+  "sheetName": "YEN KIT",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 9,
+  "displayNoStatus": "2LT YEN KIT"
+ },
+ {
+  "rank": "2LT",
+  "displayName": "AIDAN",
+  "sheetName": "AIDAN",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 9,
+  "displayNoStatus": "2LT AIDAN"
+ },
+ {
+  "rank": "2LT",
+  "displayName": "GUAN LIN",
+  "sheetName": "GUAN LIN",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 9,
+  "displayNoStatus": "2LT GUAN LIN"
+ },
+ {
   "rank": "2WO",
   "displayName": "SARA",
   "sheetName": "(SUP) SARAVANAN",

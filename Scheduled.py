@@ -8,9 +8,17 @@ import pandas as pd
 from ujson import load, dump
 from calendar import monthrange
 
-async def EveryFifteenMinutes(context):
-    DownloadDatabase() 
-    ObtainMergedCells()
+async def EveryThirtyMinutes(context, scheduled:True):
+    run = False
+    if scheduled:
+        if datetime.time(8, 0) <= Functions.CurrentDatetime() <= datetime.time(22, 0):
+            run = True
+    else:
+        run = True
+    
+    if run:
+        DownloadDatabase()
+        ObtainMergedCells()
 
 async def EveryDaily(context):
     RemoveOutdated()
