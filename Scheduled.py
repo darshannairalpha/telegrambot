@@ -11,7 +11,7 @@ from calendar import monthrange
 async def EveryThirtyMinutes(context, scheduled=True):
     run = False
     if scheduled:
-        if datetime.time(10, 0) <= Functions.CurrentDatetime().time() <= datetime.time(22, 0):
+        if datetime.time(10, 0) <= Functions.CurrentDatetime().time() <= datetime.time(22, 1):
             run = True
     else:
         run = True
