@@ -55,6 +55,15 @@
  },
  {
   "rank": "2LT",
+  "displayName": "RICHMOND",
+  "sheetName": "RICHMOND",
+  "commSec": "NIL",
+  "nor": "REGULAR",
+  "rankINT": 9,
+  "displayNoStatus": "2LT RICHMOND"
+ },
+ {
+  "rank": "2LT",
   "displayName": "MAX",
   "sheetName": "MAX",
   "commSec": "NIL",
@@ -64,21 +73,12 @@
  },
  {
   "rank": "2LT",
-  "displayName": "RICHMOND RAY",
-  "sheetName": "RICHMOND RAY",
+  "displayName": "LEON",
+  "sheetName": "LEON",
   "commSec": "NIL",
   "nor": "NSF",
   "rankINT": 9,
-  "displayNoStatus": "2LT RICHMOND RAY"
- },
- {
-  "rank": "2LT",
-  "displayName": "LEON LAI",
-  "sheetName": "LEON LAI",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 9,
-  "displayNoStatus": "2LT LEON LAI"
+  "displayNoStatus": "2LT LEON"
  },
  {
   "rank": "2LT",
@@ -277,5 +277,86 @@
   "nor": "NSF",
   "rankINT": 1,
   "displayNoStatus": "3SG SHIN RON"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "BRAYDEN",
+  "sheetName": "BRAYDEN",
+  "commSec": "NIL",
+  "nor": "REGULAR",
+  "rankINT": 0,
+  "displayNoStatus": "SCT BRAYDEN"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "NOAH LAM",
+  "sheetName": "NOAH LAM",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 0,
+  "displayNoStatus": "SCT NOAH LAM"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "MARCUS",
+  "sheetName": "MARCUS",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 0,
+  "displayNoStatus": "SCT MARCUS"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "MENG LONG",
+  "sheetName": "MENG LONG",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 0,
+  "displayNoStatus": "SCT MENG LONG"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "KAI",
+  "sheetName": "KAI",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 0,
+  "displayNoStatus": "SCT KAI"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "CHARLES",
+  "sheetName": "CHARLES",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 0,
+  "displayNoStatus": "SCT CHARLES"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "DARSHAN",
+  "sheetName": "DARSHAN",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 0,
+  "displayNoStatus": "SCT DARSHAN"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "ZHONG PING",
+  "sheetName": "ZHONG PING",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 0,
+  "displayNoStatus": "SCT ZHONG PING"
+ },
+ {
+  "rank": "SCT",
+  "displayName": "DERRILL",
+  "sheetName": "DERRILL",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 0,
+  "displayNoStatus": "SCT DERRILL"
  }
 ]

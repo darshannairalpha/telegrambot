@@ -224,11 +224,10 @@ def ObtainDutyForecastExcel(startDateDT, endDateDT):
 
 def EditADWExcelSheet():
     adwDF = pd.read_excel('data/excel files/in/adw.xlsx').fillna('NIL')
-    
-    adwDF.columns = [x for x in range(adwDF.shape[1])]
 
     for column in adwDF.columns:
         adwDF[column] = adwDF[column].str.upper()
+        adwDF[column] = adwDF[column].str.strip()
 
     adwDF.to_csv('data/database/adw/adw.csv', index=False)
 

@@ -6,6 +6,7 @@ NOTE: [DATE] will be in [DD][MM][YY] format
 TERMS OF REFERENCE:
 /tor - gives you the places where the bot takes information from
 /escort - help for escort
+/ae - edit weapon controller sheet
 
 PARADE STATE / DUTY COMMANDS:
 /f [DATE (optional)] - generates the parade state

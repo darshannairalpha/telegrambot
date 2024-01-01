@@ -207,7 +207,7 @@ class DataManager:
 
     def __GetWeaponControllers(self):
         for x in self.WCrange:
-            self.bottomCategorised['weaponControllers'].append(self.adwDF.iloc[x, self.day].upper().strip())
+            self.bottomCategorised['weaponControllers'].append(self.adwDF.iloc[x, self.day + 1].upper().strip())
     
     def __SplitCallsigns(self, deltaDay: int):
         temp = []
@@ -226,7 +226,7 @@ class DataManager:
         self.__GetWeaponControllers()
 
         # places those on duty the day before into a list and splits those with '/'
-        adw_daybefore_list = self.__SplitCallsigns(-1)
+        adw_daybefore_list = self.__SplitCallsigns(0)
 
         # putting all those on duty the day before on changeover
         for x in adw_daybefore_list:
@@ -236,7 +236,7 @@ class DataManager:
                     break
 
         # places those on duty into a list and splits those with '/'
-        adw_day_list = self.__SplitCallsigns(0)
+        adw_day_list = self.__SplitCallsigns(1)
 
         # if (R) present, status is R
         # else status is HFD

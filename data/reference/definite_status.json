@@ -39,6 +39,10 @@
   "displayStatus": "AI",
   "category": "PRESENT"
  },
+ "CAMP": {
+  "displayStatus": "NIL",
+  "category": "PRESENT"
+ },
  "X": {
   "displayStatus": "NIL",
   "category": "DYME"
