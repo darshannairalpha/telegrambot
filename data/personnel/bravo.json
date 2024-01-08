@@ -55,6 +55,15 @@
  },
  {
   "rank": "LTA",
+  "displayName": "ELLESTER",
+  "sheetName": "ELLESTER",
+  "commSec": "NIL",
+  "nor": "REGULAR",
+  "rankINT": 10,
+  "displayNoStatus": "LTA ELLESTER"
+ },
+ {
+  "rank": "LTA",
   "displayName": "DANIEL",
   "sheetName": "DANIEL",
   "commSec": "NIL",
@@ -63,22 +72,49 @@
   "displayNoStatus": "LTA DANIEL"
  },
  {
-  "rank": "2LT",
+  "rank": "LTA",
   "displayName": "THEOPHILUS",
   "sheetName": "THEOPHILUS",
   "commSec": "NIL",
   "nor": "NSF",
-  "rankINT": 9,
-  "displayNoStatus": "2LT THEOPHILUS"
+  "rankINT": 10,
+  "displayNoStatus": "LTA THEOPHILUS"
  },
  {
-  "rank": "2LT",
+  "rank": "LTA",
   "displayName": "CALEB",
   "sheetName": "CALEB",
   "commSec": "NIL",
   "nor": "NSF",
+  "rankINT": 10,
+  "displayNoStatus": "LTA CALEB"
+ },
+ {
+  "rank": "2LT",
+  "displayName": "JUN YI",
+  "sheetName": "JUN YI",
+  "commSec": "NIL",
+  "nor": "NSF",
   "rankINT": 9,
-  "displayNoStatus": "2LT CALEB"
+  "displayNoStatus": "2LT JUN YI"
+ },
+ {
+  "rank": "2LT",
+  "displayName": "JAMES",
+  "sheetName": "JAMES",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 9,
+  "displayNoStatus": "2LT JAMES"
+ },
+ {
+  "rank": "2LT",
+  "displayName": "ISAAC",
+  "sheetName": "ISAAC",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 9,
+  "displayNoStatus": "2LT ISAAC"
  },
  {
   "rank": "2WO",
@@ -226,15 +262,6 @@
  },
  {
   "rank": "3SG",
-  "displayName": "ISAAC",
-  "sheetName": "ISAAC",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 1,
-  "displayNoStatus": "3SG ISAAC"
- },
- {
-  "rank": "3SG",
   "displayName": "ZACHARY",
   "sheetName": "ZACHARY",
   "commSec": "NIL",
@@ -250,5 +277,14 @@
   "nor": "NSF",
   "rankINT": 1,
   "displayNoStatus": "3SG MALCOLM PECK"
+ },
+ {
+  "rank": "3SG",
+  "displayName": "ISAAC",
+  "sheetName": "ISAAC LIM",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 1,
+  "displayNoStatus": "3SG ISAAC"
  }
 ]

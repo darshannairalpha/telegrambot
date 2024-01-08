@@ -54,6 +54,15 @@
   "displayNoStatus": "LTA JOVAN"
  },
  {
+  "rank": "LTA",
+  "displayName": "MAX",
+  "sheetName": "MAX",
+  "commSec": "NIL",
+  "nor": "NSF",
+  "rankINT": 10,
+  "displayNoStatus": "LTA MAX"
+ },
+ {
   "rank": "2LT",
   "displayName": "RICHMOND",
   "sheetName": "RICHMOND",
@@ -61,15 +70,6 @@
   "nor": "REGULAR",
   "rankINT": 9,
   "displayNoStatus": "2LT RICHMOND"
- },
- {
-  "rank": "2LT",
-  "displayName": "MAX",
-  "sheetName": "MAX",
-  "commSec": "NIL",
-  "nor": "NSF",
-  "rankINT": 9,
-  "displayNoStatus": "2LT MAX"
  },
  {
   "rank": "2LT",
@@ -298,12 +298,12 @@
  },
  {
   "rank": "SCT",
-  "displayName": "MARCUS",
-  "sheetName": "MARCUS",
+  "displayName": "YI LONG",
+  "sheetName": "YI LONG",
   "commSec": "NIL",
   "nor": "NSF",
   "rankINT": 0,
-  "displayNoStatus": "SCT MARCUS"
+  "displayNoStatus": "SCT YI LONG"
  },
  {
   "rank": "SCT",
