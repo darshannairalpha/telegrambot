@@ -8,6 +8,43 @@ import pandas as pd
 from ujson import load, dump
 from calendar import monthrange
 
+# |==================================================================================================================================================================|
+# |                                                                                                                                                                  |
+# |                                                     ALL FUNCTIONS THAT ARE SCHEDULED (also in /update)                                                           |
+# |                                                                                                                                                                  |
+# | Functions sent to bot.job_queue._ (context is not used but added so that it can be inputted into bot.job_queue._):                                               |
+# | --> EveryThirtyMinutes(context, scheduled) - runs every THIRTY MINUTES (can be changed as an argument in run.py -> bot.job_queue.run_repeating)                  |
+# |     --> If run through bot.job_queue._, if statement ensures that DownloadDatabase() and ObtainMergedCells() runs from 10am - 10pm SGT.                          |
+# |         (added above so that google cloud engine does not charge me ! (runs too many times so had to limit it))                                                  |
+# |         If run through /update, scheduled will be FALSE, and functions can be ran.                                                                               |
+# |     --> DownloadDataBase()  - downloads ME_df for the month before, current month and month after (if available) and stores it as a csv in data/database/me      |
+# |     --> ObtainMergedCells() - obtain the merged cells in the google sheet as pandas' to_csv does not recognise merged cells                                      |
+# |                               (how it works is explained below) (works most of the time lol)                                                                     |
+# |                                                                                                                                                                  |
+# | --> EveryDaily(context) - runs once every DAY                                                                                                                    |
+# |     --> RemoveOutdated() - removes all the outdated dates in data/override/(parade_state_override/rations).json                                                  |
+# |                            (dates older than the current date are removed)                                                                                       |
+# |                                                                                                                                                                  |
+# | --> EveryMonth(context) - runs once on the LAST DAY of each MONTH                                                                                                |
+# |     --> dateDT - will be the next month if it is on the last day (scheduled).                                                                                    |
+# |                - will be current month if not ran on the last day (/update).                                                                                     |
+# |     --> GetGlobalVariables(dateDT) - get variables in Global.py (if last dat of month, would want to get next month's TOP, MIDDLE and BOTTOM)                    |
+# |     --> GetmeMonthRef()            - obtain month in name of ME_df google sheet (eg. Jan 24 -> JAN will be saved), so that the coreect sheet can be accessed     |
+# |         1. Loads in list from data/reference/meDF_month_ref.json with already saved dates                                                                        |
+# |         2. Makes a list with months in full - ["JANUARY", "FEBRUARY", "MARCH", ...]                                                                              |
+# |         3. Starts with the month before, and loads in file with sheet name as the first three letters of month name (eg. JAN),                                   |
+# |            by sending a request to google sheet website (to obtain csv of sheet)                                                                                 |
+# |         4. __MonthChecker(meDF, ...) checks whether the sheet loaded in is the correct date (eg. checks for Jan in 1-Jan at ~ 10th row)                          |
+# |         5a. If it is not the correct month (eg. when checking for Jan, 1-Feb present), a letter is added and a request is sent again (eg. JAN -> JANU).          |
+# |             5a.1. Step (4) is repeated                                                                                                                           |
+# |             5a.2. Steps (5a) to (5a.1) is repeated until it detects the correct month - to (5b), or until the whole month is spelled out                         |
+# |             5a.3. If the whole month is spelled out, list in (1) is not rewritten (indicated failure or sheet not present).                                      |
+# |         5b. If it is the correct month, the current month is saved into list in (1)                                                                              |
+# |             (eg. If passes on JAN, JAN is saved. If passes on JANU, saves JANU).                                                                                 |
+# |         6. Repeats (3) to (5) for the current month and the month after                                                                                          |
+# |                                                                                                                                                                  |
+# |==================================================================================================================================================================| 
+
 async def EveryThirtyMinutes(context, scheduled=True):
     run = False
     if scheduled:

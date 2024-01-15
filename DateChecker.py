@@ -1,6 +1,46 @@
 import datetime
 import Functions
 
+# |========================================================================================================================================|
+# |                                                                                                                                        |
+# |                             CHECKS DATE IS VALID WHEN INPUTTED IN COMMANDS (eg. /f, /df, ...)                                          |
+# |                                                                                                                                        |
+# |                                      *** dateRAW is int the format DDMMYY ***                                                          |
+# |                                                                                                                                        |
+# | 1. DateCheck(dateRAW)                                                                                                                  |
+# |    --> If dateRAW is 6 digits, dateRAW is passed through Functions.DateConverter                                                       |
+# |        to check if it can be converted into a datetime object, and datetime object returned                                            |
+# |        (indicated dateRAW is in DDMMYY and is a valid date)                                                                            |
+# |                                                                                                                                        |
+# | 2. SingleDate(contArgs)                                                                                                                |
+# |     --> If no date is provided - contArgs is an empty list, next day datetime object is returned                                       |
+# |     --> If one date is provided, date is passed into DateChecker.DateCheck(dateRAW).                                                   |
+# |         If date is valid, datetime object is returned, else, none is returned.                                                         |
+# |                                                                                                                                        |
+# | 3. DoubleDate(contArgs, ...)                                                                                                           |
+# |     --> BOOL autofillFirst                                                                                                             |
+# |         --> If TRUE : if no date is provided, returns 2 dates (what dates stated below)                                                |
+# |         --> If FALSE: if no date is provided, returns none                                                                             |
+# |     --> BOOL autofillSecond                                                                                                            |
+# |         --> If TRUE : if one date provided, returns 2 dates (what dates stated below)                                                  |
+# |         --> If FALSE: if one date provided, returns none                                                                               |
+# |                                                                                                                                        |
+# |     --> If no dates provided and autoFillFirst is TRUE,                                                                                |
+# |         datetime of next day and the day after the next day is returned                                                                |
+# |     --> If one date is provided and autoFillSecond is TRUE,                                                                            |
+# |         date is passed into DateChecker.DateCheck(dateRAW) to check.                                                                   |
+# |         If valid, datetime object is returned and the day after date provided is returned,                                             |
+# |         else, none is returned.                                                                                                        |
+# |     --> If two dates provided, both dates are checked to be valid.                                                                     |
+# |         Then, second date is checked to be larger than the first date.                                                                 |
+# |         Lastly, if maxDayDelta provided, checkes whether number of days between startDate and endDate is smaller than maxDayDelta.     |
+# |         If it fails at any step, none is returned.                                                                                     |
+# |                                                                                                                                        |
+# |                                FAILS at rejecting dates very far away from current date                                                |
+# |                                        (eg. 010140 will pass and be returned !!!)                                                      |
+# |                                                                                                                                        |
+# |========================================================================================================================================|
+
 def DateCheck(dateRAW):   
     # checks if date provided is 6 digits
     if len(dateRAW) == 6:

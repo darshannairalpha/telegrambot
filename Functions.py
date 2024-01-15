@@ -3,6 +3,14 @@ import pandas as pd
 from ujson import load
 from pytz import timezone
 
+# |==================================================|
+# |                                                  |
+# | These functions are all used in other .py files  |
+# |                                                  |
+# |   How ME_df is obtained is explained below ↓↓↓   |
+# |                                                  |
+# |==================================================|
+
 def CurrentDatetime():
     return datetime.datetime.now(timezone('Asia/Singapore'))
 
@@ -27,6 +35,12 @@ def csv_to_dataframe(month_num, year, sheet):
     # converts months in numbers to months in aphabets
     month_alpha = month_alpha_ref[month_num - 1]
 
+    # NOTE: ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+    # How this URL was created ↓↓↓ (return statement) (this URL gives you a csv file of the sheet you want)
+    # Original ME_df link: https://docs.google.com/spreadsheets/d/1rXLXxWMSpb8hU_BRuI87jv7wS04tB6yD/edit#gid=1221436461
+    # Spreadsheet ID: 1rXLXxWMSpb8hU_BRuI87jv7wS04tB6yD
+    # Format of URL to get csv file: https://docs.google.com/spreadsheets/d/[Spreadsheet ID]/gviz/tq?tqx=out:[csv/html]&sheet=[Sheet Name]
+    # More info is found here: https://stackoverflow.com/a/33727897
     if sheet == 'me':
         return pd.read_csv(f"https://docs.google.com/spreadsheets/d/1rXLXxWMSpb8hU_BRuI87jv7wS04tB6yD/gviz/tq?tqx=out:csv&sheet={month_alpha}%2020{year}").fillna('NIL') 
     

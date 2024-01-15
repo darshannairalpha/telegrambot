@@ -7,6 +7,17 @@ import pandas as pd
 import ParadeState as ps
 from ujson import load, dump
 
+# |=========================================================================================================|
+# |                                                                                                         |
+# |                     ALL FOR MAKING EXCEL FILES (/ae, /pl, /pe, /sl, /se, /df)                           |
+# |                                                                                                         |
+# | Functions that start with:                                                                              |
+# | --> Obtain : Generates excel sheet from csv/json files in data folder                                   |
+# | --> Edit   : Receives excel sheets sent by user and rewrites into respective csv/json file to be saved  |
+# |                                                                                                         |
+# |=========================================================================================================|
+
+
 def ObtainFlightPersonnelExcel(instructions:bool):
     writer = pd.ExcelWriter('data/excel files/out/flightPersonnel.xlsx')
     

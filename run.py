@@ -11,6 +11,21 @@ from dotenv import load_dotenv
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import filters, ApplicationBuilder, CommandHandler, MessageHandler, ConversationHandler
 
+# |==================================================================================================|
+# |                                                                                                  |
+# |                                   !!! RUN THIS FILE !!!                                          |
+# |                                                                                                  |
+# | 1. Loads in variable API_KEY from .env file                                                      |
+# | 2. Runs Scheduled.GetGlobalVariables() once, when file is ran                                    |
+# |    --> subsequently runs last day of every month to update global variable for the next month    |
+# | 3. Contains all the scheduling of functions in Scheduled.py                                      |
+# |    --> can be found under bot.job_queue.(run_repeating/run_daily/run_monthly)                    |
+# | 4. Contains all the functions for each command in the bot                                        |
+# |    --> can be found under bot.add_handler                                                        |
+# | 5. bot.run_polling() - polls telegram to check for command sent                                  |
+# |                                                                                                  |
+# |==================================================================================================|
+
 async def Start(update, context):
     chatID = update.effective_chat.id
     username = update.effective_chat.username
@@ -445,6 +460,11 @@ if __name__ == "__main__":
 
     bot = ApplicationBuilder().token(os.getenv('API_KEY')).build()
 
+    # bascially /update (ensures that all stuff is up to date)
+    Scheduled.DownloadDatabase()
+    Scheduled.ObtainMergedCells()
+    Scheduled.RemoveOutdated()
+    Scheduled.GetGlobalVariables()
     Scheduled.GetGlobalVariables()
 
     OverrideListEditHandler = ConversationHandler(
