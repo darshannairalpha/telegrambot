@@ -79,7 +79,9 @@ def DownloadDatabase():
         itMonth, itYear = Functions.timedelta_months(currentMonth, currentYear, deltaMonths)
         
         meDF = Functions.csv_to_dataframe(itMonth, itYear, 'me')
-        meDF.to_csv(f'data/database/me/me_{itMonth}_{itYear}.csv', index=False)  
+
+        if isinstance(meDF, pd.DataFrame):
+            meDF.to_csv(f'data/database/me/me_{itMonth}_{itYear}.csv', index=False)  
 
         # NOTE: PENDING REMOVAL
         # adwDF = Functions.csv_to_dataframe(itMonth, itYear, 'adw')
@@ -114,13 +116,14 @@ def ObtainMergedCells():
         ME_df_with_merge = pd.read_html('https://docs.google.com/spreadsheets/d/1rXLXxWMSpb8hU_BRuI87jv7wS04tB6yD', index_col=0)[0].fillna('NIL')
 
         # obtains month of online sheet
+        month_in_sheet = None
         for x in range(5, 10):
             if re.search("[0-9]{1,2}-[A-Z]{3}", ME_df_with_merge.iloc[x, 5].upper()):
                 month_in_sheet = datetime.datetime.strptime(ME_df_with_merge.iloc[x, 5].split('-')[1].upper(), '%b').month
                 break
         
         # if month of online sheet is the same as current month, obtain merged cells
-        if month_in_sheet == month_now:
+        if month_in_sheet != None and month_now == month_in_sheet:
             run_merged_cells = True
 
     if run_merged_cells:
